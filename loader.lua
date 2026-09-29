@@ -20,6 +20,7 @@ local GITHUB_REPOSITORY = "next-hub"
 local GITHUB_BRANCH = "main"
 local SCRIPT_FILE = "NEXTHUBxRIDEAPET.lua"
 local VERSION = "v1.0"
+local VERSION = "v1.1"
 
 local rawUrl = string.format(
 	"https://raw.githubusercontent.com/%s/%s/%s/%s?v=%s",
