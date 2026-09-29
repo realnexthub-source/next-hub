@@ -45,13 +45,18 @@ local function loadMainScript()
 		return
 	end
 
-	local runOk, runError = pcall(function()
-		local chunk = compile(source)
-		if type(chunk) ~= "function" then
-			error("downloaded script did not compile")
-		end
-		chunk()
-	end)
+	if source:sub(1, 1) == "<" or source:find("404: Not Found", 1, true) then
+		warn("[NEXT HUB] GitHub returned an invalid file; check the filename and main branch")
+		return
+	end
+
+	local chunk, compileError = compile(source)
+	if type(chunk) ~= "function" then
+		warn("[NEXT HUB] Compile failed: " .. tostring(compileError))
+		return
+	end
+
+	local runOk, runError = pcall(chunk)
 	if not runOk then
 		warn("[NEXT HUB] Script failed: " .. tostring(runError))
 	end
