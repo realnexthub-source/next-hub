@@ -7,6 +7,7 @@ local BASE = "https://raw.githubusercontent.com/realnexthub-source/next-hub/main
 local places = {
 	[124216119978534] = {file = "NEXTHUBxRIDEAPET.lua", version = 1},
 	[135187059974536] = {file = "NEXTHUBxWARZ.lua", version = 1},
+	[118805555015549] = {file = "NEXTHUBxLOOTTOFORGE.lua", version = 1},
 }
 
 local entry = places[game.PlaceId]
